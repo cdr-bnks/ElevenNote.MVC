@@ -70,8 +70,8 @@ namespace ElevenNote.Controllers
 
         public ActionResult Edit(int id)
         {
-            var service = CreateNoteService();
-            var detail = service.GetNoteById(id);
+            var svc = CreateNoteService();
+            var detail = svc.GetNoteById(id);
 
             var model =
                 new NoteEdit
@@ -107,5 +107,28 @@ namespace ElevenNote.Controllers
             ModelState.AddModelError("", "Your note could not be changed.");
             return View();
         }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateNoteService();
+            var model = service.GetNoteById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateNoteService();
+
+            service.DeleteNote(id);
+            TempData["SaveResult"] = "Your note has been successfully removed.";
+
+            return RedirectToAction("Index");
+        }
+
     }
 }
