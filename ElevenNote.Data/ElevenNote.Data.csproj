@@ -59,6 +59,10 @@
     <Compile Include="Migrations\202201180207041_IntialMigration.Designer.cs">
       <DependentUpon>202201180207041_IntialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202201200000087_NoteDb.cs" />
+    <Compile Include="Migrations\202201200000087_NoteDb.Designer.cs">
+      <DependentUpon>202201200000087_NoteDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202201180207041_IntialMigration.resx">
       <DependentUpon>202201180207041_IntialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202201200000087_NoteDb.resx">
+      <DependentUpon>202201200000087_NoteDb.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
