@@ -14,6 +14,7 @@ namespace ElevenNote.Models.NoteModels
         public string Content { get; set; }// This does not show in the view
 
         [UIHint("Starred")]
+        [Display(Name = "Important")]
         public bool IsStarred { get; set; }
 
         [Display(Name= "Created")]
